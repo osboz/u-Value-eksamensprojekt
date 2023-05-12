@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Heat loss calculator</title>
+	<!--	<link rel="stylesheet" type="text/css" href="style.css"> -->
+</head>
+
+<body>
+	<h1>Heat loss calculator</h1>
+
+	<form>
+
+		<!-- walls -->
+		<fieldset>
+			<legend>Surfaces:</legend>
+
+			<label for="numWalls">Number of Surfaces:</label>
+			<input type="number" id="numWalls" min="1" max="64" required><br><br>
+
+			<div id="wallInputs">
+				<!-- Wall dimension inputs will be added here dynamically -->
+			</div>
+
+		</fieldset>
+
+		<!-- windows -->
+
+		<fieldset>
+			<legend>Windows:</legend>
+
+			<label for="numWindows">Numer of windows:</label>
+			<input type="number" id="numWindows" min="1" max="64" required><br><br>
+
+			<div id="windowInputs">
+				<!-- Wall dimension inputs will be added here dynamically -->
+			</div>
+		</fieldset>
+
+		<input type="submit" value="Calculate heat loss">
+	</form>
+
+	<!-- teskt til at vise varmetabet -->
+	<h1 id="varmeTab">Heatloss:</h1>
+
+	<!-- scipts til at lave inputs -->
+	<script src="walls.js"></script>
+	<script src="windows.js"></script>
+	
+	<!-- scipt til at regne det ud -->
+	<script src="regner.js"></script>
+
+	<form>
+		<!--  -->
+		<fieldset>
+			<legend>UVærdi test</legend>
+			<fieldset>
+				<label for="dropdown">Hus type</label>
+				<select id="husType">
+					<option value="Paracelhus">Paracelhus</option>
+					<option value="Sommerhus">Sommerhus</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<label>UVærdi test</label>
+				<input type="float" id="UVærdiInput" min="0" max="1" required value="0.2"> <br><br>
+			</fieldset>
+			<fieldset>
+				<p id="UVærdiTærskel"></p>
+				<p id="UVærdiWarning"></p>
+			</fieldset>
+		</fieldset>
+
+		<!--  -->
+	</form>
+
+	<script src="check.js"></script>
+
+</body>
+
+</html>
